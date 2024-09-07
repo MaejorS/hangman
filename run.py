@@ -1,5 +1,6 @@
 import random
 import os
+import time
 
 WORD_LIST = ["magic", "manifestation", "cosmic", "destiny", "fate", "divine", "spirit", "abundance"]
 
@@ -37,6 +38,7 @@ def play_hangman():
     """
     Main function to play the game Hangman
     """
+    
 
     # Pick the secret word
     word_to_guess = select_random_word(WORD_LIST)
@@ -44,13 +46,13 @@ def play_hangman():
     incorrect_guesses = set() # Letters user guesses incorrectly
     max_attempts = 5 # User gets 5 chances to guess before losing
 
-    print("Let's Play Hangman :)")
-    print("Instructions: You have 5 chances to guess the word correctly. Otherwise, you LOSE!")
+    
 
     # Ask guesses until game ends. This is the game loop
     while len(incorrect_guesses) < max_attempts:
         clear_terminal() # Clears terminal. Advised by mentor to add for polished look
-        
+        print("Let's Play Hangman :)")
+        print("Instructions: You have 5 chances to guess the word correctly. Otherwise, you LOSE!")
         print(f"\nWord to guess: {display_word_progress(word_to_guess, guessed_letters)}")
         print(f"Incorrect guess: {', '.join(incorrect_guesses)}")
         print(f"Remaining attempts: {max_attempts - len(incorrect_guesses)}")
@@ -61,6 +63,7 @@ def play_hangman():
         # Check if guess is correct
         if guess in guessed_letters or guess in incorrect_guesses:
             print("You already guessed that letter. Try another letter!")
+            time.sleep(1.5)
             continue
 
         if guess in word_to_guess:
@@ -69,11 +72,14 @@ def play_hangman():
         else:
             print(f"Sorry, '{guess}' is not in the word :(")
             incorrect_guesses.add(guess)
+        
+        time.sleep(1.5)
+
             
 
         # Check if player guessed the word
         if all(letter in guessed_letters for letter in word_to_guess):
-            print(f"Happy Days! You've guessed teh word: {word_to_guess}")
+            print(f"Happy Days! You've guessed the word: {word_to_guess}")
             break
     else:
         print(f"\nSad Day! You've run out of chances! The word was: {word_to_guess}")
@@ -81,23 +87,20 @@ def play_hangman():
     print("Thank you for playing Hangman :)")
 
 # Check if player wants to play again
-def play_again():
-    """
-    Asks player if they want to play again.
-    """
-    while True:
-        choice = input("Wanna go again? (yes/no): ").lower()
-        if choice in {"yes", "y"}:
-            return True
-        elif choice in {"no", "n"}:
-            return False
-        else: 
-            print("Please enter 'yes' or 'no'.")
+#def play_again():
+#    """
+#    Asks player if they want to play again.
+ #   """
+  #  while True:
+   #     choice = input("Wanna go again? (yes/no): ").lower()
+    #    if choice in {"yes", "y"}:
+     #       return True
+      #  elif choice in {"no", "n"}:
+       #     return False
+        #else: 
+         #   print("Please enter 'yes' or 'no'.")
 
 # Run game
 if __name__ == "__main__":
-    while True:
-        play_hangman()
-        if not play_again():
-            print("See ya! At least you tried!")
-            break
+    play_hangman()
+        

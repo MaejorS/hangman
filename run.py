@@ -2,7 +2,7 @@ import random
 
 WORD_LIST = ["magic", "manifestation", "cosmic", "destiny", "fate", "divine", "spirit", "abundance"]
 
-def select_random_word(word_list)
+def select_random_word(word_list):
     """
     Selects a random word from the provided word list.
     """
@@ -25,3 +25,24 @@ def get_user_guess():
             return guess
         else:
             print("Please enter a single letter.")
+
+def play_hangman():
+    """
+    Main function to play the game Hangman
+    """
+
+    # Pick the secret word
+    word_to_guess = select_random_word(WORD_LIST)
+    guessed_letters = set() # Letters user guesses correctly
+    incorrect_guesses = set() # Letters user guesses incorrectly
+    max_attempts = 5 # User gets 5 chances to guess before losing
+
+    print("Let's Play Hangman :)")
+    print("Instructions: You have 5 chances to guess the word correctly. Otherwise, you LOSE!")
+
+
+
+
+# Run game
+if __name__ == "__main__":
+    play_hangman()

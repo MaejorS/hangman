@@ -59,6 +59,17 @@ def play_hangman():
             guessed_letters.add(guess)
         else:
             print(f"Sorry, '{guess}' is not in the word :(")
+            incorrect_guesses.add(guess)
+            
+
+        # Check if player guessed the word
+        if all(letter in guessed_letters for letter in word_to_guess):
+            print(f"Happy Days! You've guessed teh word: {word_to_guess}")
+            break
+    else:
+        print(f"\nSad Day! You've run out of chances! The word was: {word_to_guess}")
+    
+    print("Thank you for playing Hangman :)")
 
 # Run game
 if __name__ == "__main__":

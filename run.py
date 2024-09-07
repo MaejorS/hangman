@@ -40,7 +40,14 @@ def play_hangman():
     print("Let's Play Hangman :)")
     print("Instructions: You have 5 chances to guess the word correctly. Otherwise, you LOSE!")
 
+    # Ask guesses until game ends. This is the game loop
+    while len(incorrect_guesses) < max_attempts:
+        print(f"\nWord to guess: {display_word_progress(word_to_guess, guessed_letters)}")
+        print(f"Incorrect guess: {', '.join(incorrect_guesses)}")
+        print(f"Remaining attempts: {max_attempts - len(incorrect_guesses)}")
 
+        # Ask player for guess
+        guess = get_user_guess()
 
 
 # Run game

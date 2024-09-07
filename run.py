@@ -49,6 +49,16 @@ def play_hangman():
         # Ask player for guess
         guess = get_user_guess()
 
+        # Check if guess is correct
+        if guess in guessed_letters or guess in incorrect_guesses:
+            print("You already guessed that letter. Try another letter!")
+            continue
+
+        if guess in word_to_guess:
+            print(f"Good guess! '{guess}' is in the word :)")
+            guessed_letters.add(guess)
+        else:
+            print(f"Sorry, '{guess}' is not in the word :(")
 
 # Run game
 if __name__ == "__main__":

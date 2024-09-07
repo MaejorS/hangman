@@ -1,6 +1,13 @@
 import random
+import os
 
 WORD_LIST = ["magic", "manifestation", "cosmic", "destiny", "fate", "divine", "spirit", "abundance"]
+
+def clear_temrminal(): # Advised by mentor to add for polished look. Used Youtube tutorial to learn how to implement
+    """
+    Clears terminal after 3 or 4 lines based on user's operating system.
+    """
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 def select_random_word(word_list):
     """
@@ -42,6 +49,7 @@ def play_hangman():
 
     # Ask guesses until game ends. This is the game loop
     while len(incorrect_guesses) < max_attempts:
+        clear_temrminal() # Clears terminal. Advised by mentor to add for polished look
         print(f"\nWord to guess: {display_word_progress(word_to_guess, guessed_letters)}")
         print(f"Incorrect guess: {', '.join(incorrect_guesses)}")
         print(f"Remaining attempts: {max_attempts - len(incorrect_guesses)}")

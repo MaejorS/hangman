@@ -73,8 +73,20 @@ def play_hangman():
     # Ask guesses until game ends. This is the game loop
     while len(incorrect_guesses) < max_attempts:
         clear_terminal()  # Clears terminal after iteration
-        print("Let's Play Halloween Hangman :)")
-        print("\nINSTRUCTIONS:")
+        print("""
+ _   _       _ _                               
+| | | | __ _| | | _____      _____  ___ _ __   
+| |_| |/ _` | | |/ _ \ \ /\ / / _ \/ _ \ '_ \  
+|  _  | (_| | | | (_) \ V  V /  __/  __/ | | | 
+|_| |_|\__,_|_|_|\___/ \_/\_/ \___|\___|_| |_| 
+| | | | __ _ _ __   __ _ _ __ ___   __ _ _ __  
+| |_| |/ _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ 
+|  _  | (_| | | | | (_| | | | | | | (_| | | | |
+|_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
+                   |___/
+              """
+             )
+        print("INSTRUCTIONS:")
         print("You have 5 chances.")
         print("Guess the Halloween-themed word correctly!")
         print("Otherwise, you LOSE!")

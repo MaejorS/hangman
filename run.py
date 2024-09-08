@@ -1,3 +1,29 @@
+"""
+Hangman Game Module
+
+This module contains the implementation of the classic Hangman game where the player 
+guesses letters to figure out a secret word. The game includes the following features:
+
+- Selecting a random word from a predefined list.
+- Displaying the current progress of the word with correctly guessed letters.
+- Tracking correct and incorrect guesses.
+- Limiting the number of incorrect guesses before the game ends.
+- Providing options to play the game again.
+
+Functions:
+- select_random_word(word_list): Picks a random word from the given list.
+- display_word_progress(word, guessed_letters): Displays the word with underscores for unguessed letters.
+- get_user_guess(): Prompts the user to enter a single letter and validates the input.
+- play_hangman(): Runs the main Hangman game loop.
+- play_again(): Asks the player if they want to play another round.
+
+Dependencies:
+- random: For selecting a random word from the list.
+- os: For clearing the terminal screen.
+- time: For adding delays between messages.
+
+"""
+
 import random
 import os
 import time
@@ -96,7 +122,7 @@ def play_hangman():
 def play_again():
     """
     Asks player if they want to play again.
-    """
+    """ 
     while True:
         choice = input("Wanna go again? (yes/no): ").lower()
         if choice in {"yes", "y"}:

@@ -128,8 +128,8 @@ def play_hangman():
         print("\nSad Day! You've run out of chances!")
         print(f"The word was: {word_to_guess}")
 
-    print("\nThanks for playing! Happy Halloween :)")
-    print("""
+        print("\nThanks for playing! Happy Halloween :)")
+        print("""
       __       *                  ((((
 *            *        *  (((
        *                (((      *
@@ -144,7 +144,7 @@ def play_hangman():
          *  \ \ \   |~~~~~~    *
   *         <__|_|   ~~~~~~ .   .     ... .
            """
-          )
+             )
 
 
 # Check if player wants to play again

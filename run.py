@@ -35,8 +35,6 @@ def clear_terminal():  # Used Youtube tutorial to learn how to implement
     """Clear terminal after 3 or 4 lines based on user's operating system."""
     try:
         os.system('cls' if os.name == 'nt' else 'clear')
-    except:
-        print("\n" * 50)
 
 
 def select_random_word(word_list):
@@ -74,8 +72,7 @@ def play_hangman():
 
     # Ask guesses until game ends. This is the game loop
     while len(incorrect_guesses) < max_attempts:
-        clear_terminal()  # Clears terminal after iteration
-        print("\n" * 2)   # Add two newlines before ASCII art
+        #clear_terminal()  # Clears terminal after iteration
         print("""
  _   _       _ _                               
 | | | | __ _| | | _____      _____  ___ _ __   

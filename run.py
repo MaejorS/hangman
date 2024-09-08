@@ -32,8 +32,10 @@ WORD_LIST = ["magic", "cemetery", "goblin", "potion",
 
 
 def clear_terminal():  # Used Youtube tutorial to learn how to implement
-    """Clear terminal after 3 or 4 lines based on user's operating system."""
-    os.system('cls' if os.name == 'nt' else 'clear')
+    """Clear the terminal using ANSI escape codes."""
+    print("\033c", end="")
+    #"""Clear terminal after 3 or 4 lines based on user's operating system."""
+    # os.system('cls' if os.name == 'nt' else 'clear')
 
 
 def select_random_word(word_list):
@@ -69,10 +71,12 @@ def play_hangman():
     incorrect_guesses = set()  # Letters user guesses incorrectly
     max_attempts = 5  # User gets 5 chances to guess before losing
 
+    
+
     # Ask guesses until game ends. This is the game loop
     while len(incorrect_guesses) < max_attempts:
-        #clear_terminal()  # Clears terminal after iteration
-        print("""
+        clear_terminal()
+        print(r"""
  _   _       _ _                               
 | | | | __ _| | | _____      _____  ___ _ __   
 | |_| |/ _` | | |/ _ \ \ /\ / / _ \/ _ \ '_ \  
@@ -84,11 +88,12 @@ def play_hangman():
 |_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
                    |___/
               """
-             )
+          )
         print("INSTRUCTIONS:")
         print("You have 5 chances.")
         print("Guess the Halloween-themed word correctly!")
         print("Otherwise, you LOSE!")
+        #clear_terminal()  # Clears terminal after iteration
         print(f"\nIncorrect guess: {', '.join(incorrect_guesses)}")
         print(f"Remaining Guesses: {max_attempts - len(incorrect_guesses)}")
         print(
@@ -128,7 +133,7 @@ def play_hangman():
         print(f"The word was: {word_to_guess}")
 
         print("\nThanks for playing! Happy Halloween :)")
-        print("""
+        print(r"""
       __       *                  ((((
 *            *        *  (((
        *                (((      *

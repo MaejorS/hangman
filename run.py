@@ -85,7 +85,6 @@ def play_hangman():
             f"{display_word_progress(word_to_guess, guessed_letters)}"
         )
 
-
         # Ask player for guess
         guess = get_user_guess()
 
@@ -118,6 +117,22 @@ def play_hangman():
         print(f"The word was: {word_to_guess}")
 
     print("\nThanks for playing! Happy Halloween :)")
+    print("""
+      __       *                  ((((
+*            *        *  (((
+       *                (((      *
+  *   / \        *     *(((
+   __/___\__  *          (((
+     (O)  |         *     ((((
+*  '<   ? |__ ... .. .             *
+     \@      \    *    ... . . . *
+     //__     \\
+    // ||\__   \    |~~~~~~ . . .   *
+====M===M===| |=====|~~~~~~   . . .. .. .
+         *  \ \ \   |~~~~~~    *
+  *         <__|_|   ~~~~~~ .   .     ... .
+           """
+          )
 
 
 # Check if player wants to play again

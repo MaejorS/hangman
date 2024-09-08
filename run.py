@@ -64,16 +64,11 @@ def get_user_guess():
 
 def play_hangman():
     """Play the game Hangman."""
-    # clear_terminal()
     # Pick the secret word
     word_to_guess = select_random_word(WORD_LIST)
     guessed_letters = set()  # Letters user guesses correctly
     incorrect_guesses = set()  # Letters user guesses incorrectly
     max_attempts = 5  # User gets 5 chances to guess before losing
-
-    # print("Let's Play Hangman :)")
-    # print("Instructions: You have 5 chances to guess the word correctly.")
-    # print("Otherwise, you LOSE!")
 
     # Ask guesses until game ends. This is the game loop
     while len(incorrect_guesses) < max_attempts:
@@ -110,7 +105,6 @@ def play_hangman():
             incorrect_guesses.add(guess)
 
         time.sleep(2)
-        
 
         # Check if player guessed the word
         if all(letter in guessed_letters for letter in word_to_guess):

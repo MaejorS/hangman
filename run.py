@@ -33,6 +33,7 @@ WORD_LIST = ["magic", "manifestation", "cosmic", "destiny",
 
 def clear_terminal():  # Used Youtube tutorial to learn how to implement
     """Clear terminal after 3 or 4 lines based on user's operating system."""
+    print("Clearing terminal")
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
@@ -63,22 +64,29 @@ def get_user_guess():
 
 def play_hangman():
     """Play the game Hangman."""
+    # clear_terminal()
     # Pick the secret word
     word_to_guess = select_random_word(WORD_LIST)
     guessed_letters = set()  # Letters user guesses correctly
     incorrect_guesses = set()  # Letters user guesses incorrectly
     max_attempts = 5  # User gets 5 chances to guess before losing
 
+    # print("Let's Play Hangman :)")
+    # print("Instructions: You have 5 chances to guess the word correctly.")
+    # print("Otherwise, you LOSE!")
+
     # Ask guesses until game ends. This is the game loop
     while len(incorrect_guesses) < max_attempts:
         clear_terminal()  # Clears terminal after iteration
         print("Let's Play Hangman :)")
-        print("Instructions: You have 5 chances to guess the word correctly.")
+        print("\nINSTRUCTIONS:")
+        print("You have 5 chances.")
+        print("Guess the word correctly!")
         print("Otherwise, you LOSE!")
         print(f"\nIncorrect guess: {', '.join(incorrect_guesses)}")
-        print(f"Remaining attempts: {max_attempts - len(incorrect_guesses)}")
+        print(f"Remaining Guesses: {max_attempts - len(incorrect_guesses)}")
         print(
-            "\nWord to guess: "
+            "\nGuess the word: "
             f"{display_word_progress(word_to_guess, guessed_letters)}"
         )
 
@@ -89,7 +97,7 @@ def play_hangman():
         if guess in guessed_letters or guess in incorrect_guesses:
             print("\nYou already guessed that letter. Try another letter!")
             print("Please wait to enter your next guess")
-            time.sleep(1.5)
+            time.sleep(2)
             continue
 
         if guess in word_to_guess:
@@ -101,7 +109,8 @@ def play_hangman():
             print("Please wait to enter your next guess")
             incorrect_guesses.add(guess)
 
-        time.sleep(1.5)
+        time.sleep(2)
+        
 
         # Check if player guessed the word
         if all(letter in guessed_letters for letter in word_to_guess):

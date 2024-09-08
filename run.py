@@ -73,6 +73,7 @@ def play_hangman():
     # Ask guesses until game ends. This is the game loop
     while len(incorrect_guesses) < max_attempts:
         clear_terminal()  # Clears terminal after iteration
+        print("\n" * 2)   # Add two newlines before ASCII art
         print("""
  _   _       _ _                               
 | | | | __ _| | | _____      _____  ___ _ __   

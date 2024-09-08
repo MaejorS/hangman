@@ -33,8 +33,7 @@ WORD_LIST = ["magic", "cemetery", "goblin", "potion",
 
 def clear_terminal():  # Used Youtube tutorial to learn how to implement
     """Clear terminal after 3 or 4 lines based on user's operating system."""
-    try:
-        os.system('cls' if os.name == 'nt' else 'clear')
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 
 def select_random_word(word_list):

@@ -126,6 +126,22 @@ def play_hangman():
         if all(letter in guessed_letters for letter in word_to_guess):
             clear_terminal()
             print(f"Happy Days! You've guessed the word: {word_to_guess}")
+            print(r"""
+      __       *                  ((((
+*            *        *  (((
+       *                (((      *
+  *   / \        *     *(((
+   __/___\__  *          (((
+     (O)  |         *     ((((
+*  '<   ? |__ ... .. .             *
+     \@      \    *    ... . . . *
+     //__     \\
+    // ||\__   \    |~~~~~~ . . .   *
+====M===M===| |=====|~~~~~~   . . .. .. .
+         *  \ \ \   |~~~~~~    *
+  *         <__|_|   ~~~~~~ .   .     ... .
+           """
+             )
             break
     else:
         clear_terminal()

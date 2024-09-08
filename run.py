@@ -126,6 +126,7 @@ def play_hangman():
         if all(letter in guessed_letters for letter in word_to_guess):
             clear_terminal()
             print(f"Happy Days! You've guessed the word: {word_to_guess}")
+            print("\nThanks for playing! Happy Halloween :)")
             print(r"""
       __       *                  ((((
 *            *        *  (((

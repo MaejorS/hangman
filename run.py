@@ -27,8 +27,8 @@ import random
 import os
 import time
 
-WORD_LIST = ["magic", "manifestation", "cosmic", "destiny",
-             "fate", "divine", "spirit", "abundance"]
+WORD_LIST = ["magic", "cemetery", "goblin", "potion",
+             "bewitched", "spooky", "vampire", "pumpkin"]
 
 
 def clear_terminal():  # Used Youtube tutorial to learn how to implement
@@ -73,10 +73,10 @@ def play_hangman():
     # Ask guesses until game ends. This is the game loop
     while len(incorrect_guesses) < max_attempts:
         clear_terminal()  # Clears terminal after iteration
-        print("Let's Play Hangman :)")
+        print("Let's Play Halloween Hangman :)")
         print("\nINSTRUCTIONS:")
         print("You have 5 chances.")
-        print("Guess the word correctly!")
+        print("Guess the Halloween-themed word correctly!")
         print("Otherwise, you LOSE!")
         print(f"\nIncorrect guess: {', '.join(incorrect_guesses)}")
         print(f"Remaining Guesses: {max_attempts - len(incorrect_guesses)}")
@@ -85,22 +85,23 @@ def play_hangman():
             f"{display_word_progress(word_to_guess, guessed_letters)}"
         )
 
+
         # Ask player for guess
         guess = get_user_guess()
 
         # Check if guess is correct
         if guess in guessed_letters or guess in incorrect_guesses:
-            print("\nYou already guessed that letter. Try another letter!")
+            print("\nYou already used this letter. Try again!")
             print("Please wait to enter your next guess")
             time.sleep(2)
             continue
 
         if guess in word_to_guess:
-            print(f"\nGood guess! '{guess}' is in the word :)")
+            print(f"\nHOORAY! '{guess}' is in the word :)")
             print("Please wait to enter your next guess")
             guessed_letters.add(guess)
         else:
-            print(f"\nSorry, '{guess}' is not in the word :(")
+            print(f"\nNOPE, '{guess}' is not in the word :(")
             print("Please wait to enter your next guess")
             incorrect_guesses.add(guess)
 
@@ -116,14 +117,14 @@ def play_hangman():
         print("\nSad Day! You've run out of chances!")
         print(f"The word was: {word_to_guess}")
 
-    print("Thank you for playing Hangman :)")
+    print("\nThanks for playing! Happy Halloween :)")
 
 
 # Check if player wants to play again
 def play_again():
     """Ask player if they want to play again."""
     while True:
-        choice = input("Wanna go again? (yes/no): ").lower()
+        choice = input("\nWanna go again? (yes/no): ").lower()
         if choice in {"yes", "y"}:
             return True
         elif choice in {"no", "n"}:

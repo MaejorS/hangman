@@ -76,7 +76,7 @@ def play_hangman():
         print("Instructions: You have 5 chances to guess the word correctly.")
         print("Otherwise, you LOSE!")
         print(f"\nIncorrect guess: {', '.join(incorrect_guesses)}")
-        print("Remaining attempts: {max_attempts - len(incorrect_guesses)}")
+        print(f"Remaining attempts: {max_attempts - len(incorrect_guesses)}")
         print(
             "\nWord to guess: "
             f"{display_word_progress(word_to_guess, guessed_letters)}"

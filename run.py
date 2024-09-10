@@ -34,8 +34,6 @@ WORD_LIST = ["magic", "cemetery", "goblin", "potion",
 def clear_terminal():  # Used Youtube tutorial to learn how to implement
     """Clear the terminal using ANSI escape codes."""
     print("\033c", end="")
-    #"""Clear terminal after 3 or 4 lines based on user's operating system."""
-    # os.system('cls' if os.name == 'nt' else 'clear')
 
 
 def select_random_word(word_list):
@@ -126,6 +124,7 @@ def play_hangman():
         if all(letter in guessed_letters for letter in word_to_guess):
             clear_terminal()
             print(f"Happy Days! You've guessed the word: {word_to_guess}")
+            
             print("\nThanks for playing! Happy Halloween :)")
             print(r"""
       __       *                  ((((

@@ -2,11 +2,7 @@
 Hangman Game Module.
 
 This module implements the classic Hangman game where the player guesses
-letters to figure out a secret word. It includes features such as selecting
-a random word from a predefined list, displaying the current progress of
-the word with correctly guessed letters, tracking correct and incorrect
-guesses, limiting the number of incorrect guesses before the game ends,
-and providing options to play the game again.
+letters to figure out a secret word. 
 
 Functions:
 - select_random_word(word_list): Picks a random word from the list.
@@ -69,29 +65,27 @@ def play_hangman():
     incorrect_guesses = set()  # Letters user guesses incorrectly
     max_attempts = 5  # User gets 5 chances to guess before losing
 
-    
-
     # Ask guesses until game ends. This is the game loop
     while len(incorrect_guesses) < max_attempts:
         clear_terminal()
         print(r"""
- _   _       _ _                               
-| | | | __ _| | | _____      _____  ___ _ __   
-| |_| |/ _` | | |/ _ \ \ /\ / / _ \/ _ \ '_ \  
-|  _  | (_| | | | (_) \ V  V /  __/  __/ | | | 
-|_| |_|\__,_|_|_|\___/ \_/\_/ \___|\___|_| |_| 
-| | | | __ _ _ __   __ _ _ __ ___   __ _ _ __  
-| |_| |/ _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ 
+ _   _       _ _
+| | | | __ _| | | _____      _____  ___ _ __
+| |_| |/ _` | | |/ _ \ \ /\ / / _ \/ _ \ '_ \
+|  _  | (_| | | | (_) \ V  V /  __/  __/ | | |
+|_| |_|\__,_|_|_|\___/ \_/\_/ \___|\___|_| |_|
+| | | | __ _ _ __   __ _ _ __ ___   __ _ _ __
+| |_| |/ _` | '_ \ / _` | '_ ` _ \ / _` | '_ \
 |  _  | (_| | | | | (_| | | | | | | (_| | | | |
 |_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
                    |___/
               """
-          )
+              )
         print("INSTRUCTIONS:")
         print("You have 5 chances.")
         print("Guess the Halloween-themed word correctly!")
         print("Otherwise, you LOSE!")
-        #clear_terminal()  # Clears terminal after iteration
+        # clear_terminal()  # Clears terminal after iteration
         print(f"\nIncorrect guess: {', '.join(incorrect_guesses)}")
         print(f"Remaining Guesses: {max_attempts - len(incorrect_guesses)}")
         print(
@@ -124,7 +118,6 @@ def play_hangman():
         if all(letter in guessed_letters for letter in word_to_guess):
             clear_terminal()
             print(f"Happy Days! You've guessed the word: {word_to_guess}")
-            
             print("\nThanks for playing! Happy Halloween :)")
             print(r"""
       __       *                  ((((
@@ -141,7 +134,7 @@ def play_hangman():
          *  \ \ \   |~~~~~~    *
   *         <__|_|   ~~~~~~ .   .     ... .
            """
-             )
+                  )
             break
     else:
         clear_terminal()
@@ -164,7 +157,7 @@ def play_hangman():
          *  \ \ \   |~~~~~~    *
   *         <__|_|   ~~~~~~ .   .     ... .
            """
-             )
+              )
 
 
 # Check if player wants to play again

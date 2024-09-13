@@ -5,7 +5,7 @@ Welcome to Halloween Hangman, a spooky version of the classic word-guessing game
 Below is the single mockup of the main playing area of the game created using Placeit
 <br>
 
-![Project Screenshot](/assets/images/mockuprpsls.png)
+![Project Screenshot](/images/mockupshangman.png)
 
 <br>
 
@@ -74,7 +74,7 @@ Wireframes were developed for mobile, tablet and desktop. [Balsamiq](https://bal
 
 <br>
 
-- 
+
 ## Future Features
 - A timer that adds an element of pressure and excitment for the player 
 - A Goblin that appears as the player guesses wrong so that when they lose, a goblin gets them.
@@ -83,78 +83,95 @@ Wireframes were developed for mobile, tablet and desktop. [Balsamiq](https://bal
 
 # Testing
 
-- Firefox, Chrome and Safari were used to test the game in the Heroku app.
-- Scores increment properly, game over function works and play feature clears terminal and starts game over.
-- 
+
+- Tested to make sure the score decreased as the player guessed wrong, that letters appeared as they were guessed correctly and that wrong guesses were stored in the set.
 <br>
 
-![Project Screenshot]()
+![Score Update](/images/testherokuscorekeep.jpg)
 
 <br>
-- I tested to make sure that icons change color depending on whether user wins or loses to the computer.
+- Play again option appears in Heroku after player wins/loses.
 <br>
 
-![Project Screenshot]()
-
-<br>
-
-![Project Screenshot]()
-
-<br>
-- 
-- 
+![Play Again](/images/testherokuplayagain.jpg)
 
 <br>
 
-![Project Screenshot]()
+<br>
+- Test user input to make sure they are prompted if incorret data is entered.
+<br>
+
+![Input test](/images/testduplicateguess.jpg)
+
+<br>
+- It is difficult to show text, but made sure terminal cleared after every guess. Timer allowed prompt to update user and let them know to wait before entering a new guess.
 
 <br>
 
-- Used [WAVE](https://wave.webaim.org/) web accessability evaluation tool to check for accessability issues. A couple of minore notes about an h2 tag and the justified text
+![Clear terminal](/images/testherokuterminalclear.jpg)
 
-![Project Screenshot](/assets/images/wavetest.jpg)
+<br>
 
 # Bugs and Fixes
-- 
+- The biggest bug occured trying to get the terminal cleared. Part of the title kept sticking to the top of the terminal. Forgot to take a screen shot. Spent at least an hour troubleshooting and found out that the original function did not clear the terminal properly in Heroku. To fix, I had to research how else to clear the terminal using ANSI escape codes as outlined in the screenshots. Note, it all worked fine in gitpod. However, it did not work well with Heroku deployment. 
 
 <br>
 
-![Project Screenshot](/assets/images/invalidassignment.jpg)
+![Clear Terminal Bug Funciton](/images/bugclearterminal1.jpg)
 
 <br>
 
-- when trying to display increase in score in the game and display in the span, it was not displaying the increase as a result of the error below. forgot to call .innerHTML in win function under computerScore_span. Once corrected, it started increasing the score as expected.
+<br>
+
+![Clear Terminal Bug FIX](/images/bugfixclearterminal.jpg)
 
 <br>
 
-![Project Screenshot](/assets/images/userscorespannotdefined.jpg)
+- The score was not updating properly, but realized the function was incomplete and the score was not updated properly
 
 <br>
 
-- when updating win function to get result_div, css styles were removed from div as shown below. When I got the reference from the element document.querySelector(".result"), I forgot that the text is stored in a p element. Incluced p tag to correct error.
+![Score bug](/images/bugscorenotupdating.jpg)
 
 <br>
 
-![Project Screenshot](/assets/images/divadjust.jpg)
+<br>
+
+![Score bug fix](/images/bugfixupdatingset.jpg)
+
+<br>
+
+- Indentation error caused app not to run. Fixed with proper indentation.
+
+<br>
+
+![Indentation error](/images/indentationerror2.jpg)
 
 # Validator Testing
 ## PEP 8
 no errors were found when I put through the PEP 8 validator
 <br>
 
-![Project Screenshot]()
+![Project Screenshot](/images/cipep8validator.jpg)
 
 # Deployment
-The site was deployed to GitHub Pages. The steps to deploy are as follows:
+The site was deployed using Code Institute's mock terminal for Heroku.
+
+- Steps for deployment:
+    - Fork or clone this repository.
+    - Create a new Heroku app
+    - Set the buildbacks to python and NodeJS in that order
+    - Link the Heroku app to the repository
+    - Click on Deploy
 
 
-The live link can be found [here]().
+The live link can be found [here](https://megan-hangman-python-game-11990bf92930.herokuapp.com/).
 
 # Credits
 ## Content
-- Tutorial on clearing terminal [Tutorial Name]()
+- Tutorial on clearing terminal [Coding with TJ](https://www.youtube.com/watch?v=LQzwMdplVw0)
 ## Media
-- [Ascii art]() ascii art
+- [Ascii art](https://www.asciiart.eu/holiday-and-events/halloween) ascii art
 
 # Acknowledgments
 - Thanks to my mentor [Chris Quinn](https://github.com/10xOXR) for planning and helpful feedback throughout the project.

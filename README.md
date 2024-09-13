@@ -13,23 +13,23 @@ Below is the single mockup of the main playing area of the game created using Pl
 
 - The computer selects a random word from the Halloween-themed word list.
 - The player guesses one letter at a time.
-- For every incorrect guess, the Grim Reaper slowly disappears, and the number of attempts decreases.
+- For every incorrect guess, the number of attempts decreases.
 - The player either successfully guesses the word or loses when all attempts are used up.
 
 # UX
-The Halloween Hangman game is designed to be engaging and spooky while keeping a simple user interface. Players can guess letters and track their progress, seeing visual changes as incorrect guesses result in the Grim Reaper disappearing piece by piece.
+The Halloween Hangman game is designed to be engaging and spooky while keeping a simple user interface. Players can guess letters and track their progress, seeing visual changes as incorrect guesses are stored in their own set and the correct guesses are revealed with each correct guess. They also get a fun Halloween ascii art whether they win or lose.
 
 The design ensures that users can:
 
 - Easily understand and play the game.
-- View their remaining attempts and the Grim Reaper figure as it disappears.
+- View their remaining attempts and see the letters as they guess correctly.
 - Get clear feedback for correct or incorrect guesses.
 
 # Colour Scheme
 The chosen color scheme for Hallooween Hangman is standard terminal color. This incluedes black background with white text.
 
 # Typography
-The game uses the Google Font called 'Asap' for its modern and clean style. This font was chosen for its readability and compatibility with the game's aesthetic.
+The game uses standard terminal font. 
 
 # User Stories
 - As a new user, I want to understand how to play the game so I can start guessing letters.
